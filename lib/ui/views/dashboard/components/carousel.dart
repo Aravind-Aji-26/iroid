@@ -36,7 +36,7 @@ class CarouselHome extends StatelessWidget {
             ),
             child: Image.network(
               banner.image ?? '',
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
               errorBuilder: (context, object, stackTrace) {
                 return const Center(child: Icon(Icons.error));
               },

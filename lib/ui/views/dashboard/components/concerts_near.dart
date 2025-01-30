@@ -33,7 +33,14 @@ class ConcertsNear extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 6.0),
-                child: Image.network(section?.data?[index].image ?? '',fit: BoxFit.fill,   width: 236,),
+                child:Container(
+                  width: 236,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(7),
+                      image:  DecorationImage(
+                          image: NetworkImage(section?.data?[index].image ?? ''),
+                          fit: BoxFit.fill)),
+                )
               ),),
           )
         ],

@@ -33,7 +33,15 @@ class TopRatedMovies extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 6.0),
-                child: Image.network(movies?[index].image ?? '',fit: BoxFit.fill,   width: 108,),
+                child:Container(
+                  height: 130,
+                  width: 108,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(7),
+                      image:  DecorationImage(
+                          image: NetworkImage(movies?[index].image ?? ''),
+                          fit: BoxFit.fill)),
+                )
               ),),
           )
         ],

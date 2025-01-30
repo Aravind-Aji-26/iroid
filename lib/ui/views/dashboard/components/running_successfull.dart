@@ -34,11 +34,14 @@ class TrendingTrailers extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 6.0),
-                child: Image.network(
-                  section2?.data?[index].media ?? '',
-                  fit: BoxFit.fill,
+                child:Container(
                   width: 251,
-                ),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(7),
+                      image:  DecorationImage(
+                          image: NetworkImage(section2?.data?[index].media ?? ''),
+                          fit: BoxFit.fill)),
+                )
               ),
             ),
           )
